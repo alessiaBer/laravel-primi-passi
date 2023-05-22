@@ -14,5 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $data = [
+        "menuItems" => [
+            [
+            'name' => 'Home',
+            'path' => ''
+            ],
+            [
+            'name' => 'Projects',
+            'path' => 'projects'
+            ],
+            [
+            'name' => 'About',
+            'path' => 'about'
+            ],
+            [
+            'name' => 'Contacts',
+            'path' => 'contacts'
+            ]
+        ]
+    ];
+    return view('home', $data);
 });
